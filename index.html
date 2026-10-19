@@ -13,33 +13,41 @@ html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ice);color:var(--petrol);
 font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:720px;margin:0 auto;padding:0 24px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
 header{padding:28px 0}
 header a.brand{display:inline-block}
 header img{height:34px;width:auto;display:block}
-.hero{padding:48px 0 56px;text-align:center}
+.hero{padding:40px 0 56px;text-align:center}
+.hero-text{max-width:38ch;margin:0 auto}
+@media(min-width:900px){
+.hero{display:grid;grid-template-columns:minmax(330px,1fr) auto;gap:48px;align-items:center;text-align:left;padding:56px 0 64px}
+.hero-text{margin:0}
+.hero .lead{margin-left:0;max-width:30ch}
+.phones{margin:0}
+}
 .hero img.appicon{width:132px;height:132px;margin:0 auto 24px;display:block;
 border-radius:29%;box-shadow:0 18px 40px -18px rgba(27,54,57,.45)}
 .phones{display:flex;justify-content:center;align-items:flex-end;gap:16px;margin:0 auto 32px}
-.phone{width:232px;flex:0 0 auto;border-radius:38px;padding:9px;background:var(--petrol);
+.phone{width:224px;flex:0 0 auto;border-radius:38px;padding:9px;background:var(--petrol);
 box-shadow:0 26px 60px -24px rgba(27,54,57,.55)}
 .phone img{display:block;width:100%;height:auto;border-radius:30px}
-.phone.side{display:none;width:200px;opacity:.9}
-@media(min-width:720px){.phone.side{display:block}}
+.phone.side{display:none;width:188px;opacity:.92}
+@media(min-width:620px){.phone.side{display:block}}
+@media(min-width:900px) and (max-width:1199px){.phone.side:last-child{display:none}}
 h1{font-size:34px;line-height:1.15;letter-spacing:-.8px;margin:0 0 14px}
-.lead{font-size:20px;color:var(--ink-muted);margin:0 auto 28px;max-width:34ch}
+.lead{font-size:20px;color:var(--ink-muted);margin:0 auto 28px;max-width:34ch;line-height:1.45}
 .cta{display:inline-block;background:var(--petrol);color:var(--ice);text-decoration:none;
 font-weight:600;padding:15px 26px;border-radius:28px}
 .cta:hover{background:var(--petrol-deep)}
 .note{font-size:15px;color:var(--ink-muted);margin-top:14px}
-.cards{display:grid;gap:12px;grid-template-columns:1fr;margin:0 0 56px}
+.cards{display:grid;gap:12px;grid-template-columns:1fr;margin:0 0 56px;max-width:860px;margin-inline:auto}
 @media(min-width:620px){.cards{grid-template-columns:1fr 1fr}}
 .card{background:var(--paper);border-radius:20px;padding:22px}
 .card h3{margin:0 0 6px;font-size:17px}
 .card p{margin:0;color:var(--ink-muted);font-size:16px}
-.privacy{background:var(--sage);border-radius:20px;padding:24px;margin:0 0 56px}
+.privacy{background:var(--sage);border-radius:20px;padding:24px;margin:0 auto 56px;max-width:860px}
 .privacy p{margin:0}
-main.doc{background:var(--paper);border-radius:20px;padding:8px 28px 28px;margin:8px 0 48px}
+main.doc{background:var(--paper);border-radius:20px;padding:8px 28px 28px;margin:8px auto 48px;max-width:740px}
 main.doc h1{font-size:28px;margin:24px 0 4px}
 main.doc h2{font-size:19px;margin:30px 0 8px;letter-spacing:-.2px}
 main.doc .version{color:var(--ink-muted);font-size:15px;margin:0 0 8px}
@@ -63,11 +71,15 @@ header img,.hero img.mark{filter:none}
 <header><a class="brand" href="index.html"><img src="assets/wortmarke.svg" alt="mietblick"></a></header>
 
 <section class="hero">
-<img class="appicon" src="assets/appicon.png" width="512" height="512" alt="App-Symbol von mietblick">
+<div class="hero-text">
 <h1>Dein Mietvertrag,<br>endlich verständlich.</h1>
 <p class="lead">mietblick ordnet deine Situation ein, rechnet Fristen und Restwerte und formuliert die Nachricht an die Verwaltung. Für Mieterinnen und Mieter in der Schweiz.</p>
 <a class="cta" href="https://apps.apple.com/ch/app/id6824303520">Im App Store laden</a>
 <p class="note">14 Tage gratis, danach CHF 9.00 pro Jahr. Jederzeit kündbar.</p>
+</div>
+<div class="phones"><div class="phone side"><img src="assets/screen-2.webp" alt="Bildschirm aus der App mietblick" loading="lazy"></div>
+<div class="phone"><img src="assets/screen-1.webp" alt="Bildschirm aus der App mietblick" loading="lazy"></div>
+<div class="phone side"><img src="assets/screen-3.webp" alt="Bildschirm aus der App mietblick" loading="lazy"></div></div>
 </section>
 
 <div class="cards">
