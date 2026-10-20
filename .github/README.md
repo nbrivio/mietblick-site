@@ -19,12 +19,19 @@ Die öffentliche Website von **mietblick** unter [mietblick-app.ch](https://miet
 ## 🎨 Assets
 
 **Logos & Icons:**
-- `assets/mietblick-logo-dark.png` — Wortmarke (Header)
-- `assets/mietblick-appicon-hero.png` / `.webp` — 3D Haus-Icon (Hero-Section, optimiert)
-- `assets/mietblick-icon-180.png` — Favicon
+- `assets/wortmarke-petrol.png`: Wortmarke für hellen Grund (Header, Fuss)
+- `assets/wortmarke-weiss.png`: Wortmarke für Dunkelmodus
+- `assets/hero-haus.webp`: Bildmarke im Hero
+- `assets/mark.webp`: freigestellte Bildmarke im Abschlussband
+- `assets/icon.png` / `assets/appicon.png`: Favicon und Vorschaubild
 
-**Screenshots:**
-- `assets/screen-*.webp` — App-Screenshots (iPhone-Mockups)
+**Screenshots:** echte Bildschirme aus der App
+- `assets/app-zuhause.webp`, `app-vertrag.webp`, `app-kuendigen.webp`,
+  `app-einordnung.webp`, `app-wohnung.webp`
+
+**Illustrationen** (Style A, Soft Spatial 3D):
+- `assets/einzug-zuhause.webp`, `geraet-defekt-kueche.webp`,
+  `abnutzung-streichen.webp`, `kleine-veraenderung-lampe.webp`
 
 Alle Bilder sind **webp-optimiert** für schnelleres Laden.
 
@@ -33,10 +40,10 @@ Alle Bilder sind **webp-optimiert** für schnelleres Laden.
 ## 🔧 Architektur
 
 **Stack:**
-- **HTML5** — semantisch, keine Framework-Dependencies
-- **CSS3** — inlined für schnelles Laden, Dark Mode unterstützt
-- **Keine Externe Dependencies** — kein Google Fonts, kein Analytics, keine Tracking-Pixel
-- **Responsiv** — Mobile-first Design
+- **HTML5**: semantisch, keine Framework-Dependencies
+- **CSS3**: inlined für schnelles Laden, Dark Mode unterstützt
+- **Keine Externe Dependencies**: kein Google Fonts, kein Analytics, keine Tracking-Pixel
+- **Responsiv**: Mobile-first Design
 
 **Hosting:**
 - GitHub Pages (`github.com/nbrivio/mietblick-site`)
@@ -47,30 +54,34 @@ Alle Bilder sind **webp-optimiert** für schnelleres Laden.
 
 ## 🚀 Änderungen vornehmen
 
-Die Website wird direkt im Repository bearbeitet — **kein Build-Prozess nötig**.
+**Die HTML-Dateien hier sind erzeugt, nicht von Hand gepflegt.** Quelle ist
+`06_Website/build.py` im Projektordner `KW42_Mietblick`. Wer hier direkt editiert,
+verliert die Änderung beim nächsten Build.
 
-### HTML/CSS bearbeiten
 ```bash
-# 1. Repository klonen
-git clone https://github.com/nbrivio/mietblick-site.git
-cd mietblick-site
+# im Projektordner
+cd 06_Website
+python3 build.py          # schreibt dist/
 
-# 2. Änderungen vornehmen (z.B. index.html, style-Abschnitt)
-vim index.html
-
-# 3. Pushen → GitHub Pages deployt automatisch
+# Inhalt von dist/ in dieses Repository kopieren, dann
 git add -A
-git commit -m "Update: ..."
-git push origin main
+git commit -m "..."
+git push origin main      # GitHub Pages deployt automatisch
 ```
 
-### Assets hinzufügen
-- Bilder → `assets/`
-- Formate: PNG (Fallback), WebP (primär)
-- Komprimiert & optimiert für Web
+`CNAME`, `.nojekyll` und `.github/` bleiben dabei unberührt.
+
+### Startseite ändern
+Texte, Sektionen und Designsystem stehen in `build.py` (Abschnitte `CSS`, `SHELL`, `HOME`).
+
+### Assets
+Werden beim Build aus `01_Brand/` und `06_Website/assets/` erzeugt und auf Webgrösse
+gerechnet. Neue App-Screenshots als `06_Website/assets/app-<name>.png` ablegen.
 
 ### Rechtstext aktualisieren
-Texte in `datenschutz.html`, `nutzungsbedingungen.html` bearbeiten — **direkt im HTML**, nicht über einen Markdown-Build.
+**Nicht hier.** Das Original liegt in `05_App/mietblick/Resources/Legal/*.md` und ist
+zugleich die Fassung in der App. Dort ändern, Versionszeile hochzählen, neu bauen.
+So können App und Website nicht auseinanderlaufen.
 
 ---
 
@@ -89,18 +100,24 @@ Texte in `datenschutz.html`, `nutzungsbedingungen.html` bearbeiten — **direkt 
 - Core Web Vitals optimiert
 
 **Brand:**
-- Farben: Petrol (#1B3639), Lime (#C6FF28)
+- Farben: Petrol (#1B3639), Lime (#C5FF28), Ice (#F7FBFF)
 - Typo: Inter (System Font-Stack)
 - Design System: `mietblick.-App` Referenz
 
 ---
 
-## 📱 App-Store Links
+## 📱 App-Store Link
 
-```html
-<!-- iOS App Store -->
-<a href="https://apps.apple.com/ch/app/id6824303520">Im App Store laden</a>
+Die App ist eingereicht, aber noch nicht freigegeben. Die Seite zeigt darum
+«Bald im App Store» und verlinkt bewusst nirgends hin.
+
+Nach der Freigabe in `build.py` oben die URL eintragen:
+
+```python
+APPSTORE = "https://apps.apple.com/ch/app/id6824303520"
 ```
+
+Hero und Abschlussband schalten dann automatisch auf einen echten Store-Button um.
 
 ---
 
@@ -113,5 +130,5 @@ Texte in `datenschutz.html`, `nutzungsbedingungen.html` bearbeiten — **direkt 
 
 ---
 
-**Status:** ✅ Production-ready (v1.0.2)  
-**Zuletzt aktualisiert:** 19. Oktober 2026
+**Status:** ✅ Production-ready  
+**Zuletzt aktualisiert:** 20. Oktober 2026
