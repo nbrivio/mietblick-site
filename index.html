@@ -60,20 +60,21 @@ p:last-child{margin-bottom:0}
 .progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--lime-ink);
 z-index:40;pointer-events:none}
 
-/* Schwebende Navigation unten (Liquid-Glass-Stil, wie in der App) */
-.dock{position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);
-z-index:30;display:flex;align-items:center;gap:2px;padding:5px;border-radius:999px;max-width:calc(100vw - 24px);
+/* Schwebende Navigation unten (Liquid-Glass-Stil): Grid aus vier Feldern, eine Pille gleitet mit */
+.dock{--i:0;position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);
+z-index:30;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:min(calc(100vw - 32px),360px);
+padding:5px;border-radius:999px;isolation:isolate;
 background:rgba(255,255,255,.52);backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);
 border:1px solid rgba(255,255,255,.7);box-shadow:0 10px 32px -10px rgba(27,54,57,.35),inset 0 1px 0 rgba(255,255,255,.8)}
-.dock a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:64px;min-height:52px;padding:6px 10px;border-radius:20px;
-font-size:11px;font-weight:600;letter-spacing:-.005em;color:#1B3639;text-decoration:none;white-space:nowrap;transition:background .3s var(--ease)}
-.dock svg{width:22px;height:22px;flex:none}
-.dock a:hover{background:rgba(27,54,57,.07)}
-.dock a[aria-current="page"]{background:rgba(197,255,40,.55);box-shadow:inset 0 0 0 1px rgba(27,54,57,.08)}
-.dock a span{line-height:1}
+.dock .pill{position:absolute;top:5px;bottom:5px;left:calc(5px + (100% - 10px) * var(--i) / 4);width:calc((100% - 10px) / 4);
+border-radius:999px;background:rgba(197,255,40,.6);box-shadow:inset 0 0 0 1px rgba(27,54,57,.08);z-index:-1;
+transition:left .5s var(--ease)}
+.dock a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:54px;
+font-size:11px;font-weight:600;letter-spacing:-.005em;line-height:1;color:#1B3639;text-decoration:none;white-space:nowrap;border-radius:999px;transition:color .3s var(--ease)}
 .dock a:focus-visible{outline:2px solid #1B3639;outline-offset:2px}
-@media(max-width:380px){.dock a{min-width:56px;padding:6px 6px}}
+.dock svg{width:22px;height:22px;flex:none}
 footer{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+@media(prefers-reduced-motion:reduce){.dock .pill{transition:none}}
 /* Kopfzeile */
 .top{position:sticky;top:0;z-index:20;background:rgba(247,251,255,.82);
 backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);
@@ -290,8 +291,8 @@ html{scroll-behavior:auto}
 .top{background:rgba(15,36,38,.82)}
 .dock{background:rgba(15,36,38,.6);border-color:rgba(243,248,250,.14);box-shadow:0 10px 36px -10px rgba(0,0,0,.7),inset 0 1px 0 rgba(243,248,250,.08)}
 .dock a{color:#F7FBFF}
-.dock a:hover{background:rgba(243,248,250,.08)}
-.dock a[aria-current="page"]{background:rgba(197,255,40,.9);color:#0F2426}
+.dock .pill{background:rgba(197,255,40,.9);box-shadow:none}
+.dock a[aria-current="page"]{color:#0F2426}
 .brand .on-light{display:none}
 .brand .on-dark{display:block}
 .status{background:rgba(243,248,250,.07);border-color:var(--hairline)}
@@ -319,7 +320,7 @@ a{color:var(--lime)}
 </div></header>
 <main id="inhalt">
 
-<section class="hero">
+<section class="hero" id="start">
 <div class="shell hero-grid">
 <div class="reveal">
 <p class="status">Bald im App Store</p>
@@ -418,7 +419,16 @@ a{color:var(--lime)}
 </section>
 
 </main>
-<nav class="dock" aria-label="Seiten"><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Start</span></a><a href="index.html#funktionen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h5"/></svg><span>Vertrag</span></a><a href="support.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.3-1 .9-1 1.7v.5"/><path d="M12 17.2v.1"/></svg><span>Fragen</span></a><a href="index.html#preis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12.6 12.4 3.7a1 1 0 0 1 .7-.3H20a1 1 0 0 1 1 1v6.9a1 1 0 0 1-.3.7l-8.9 8.9a1.5 1.5 0 0 1-2.1 0l-6.9-6.9a1.5 1.5 0 0 1 0-2.1z"/><circle cx="16.5" cy="7.5" r="1.3"/></svg><span>Preis</span></a><a href="index.html#mehr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>Mehr</span></a></nav>
+<nav class="dock" aria-label="Seiten" data-spy style="--i:0"><span class="pill" aria-hidden="true"></span><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Start</span></a><a href="index.html#funktionen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h5"/></svg><span>Feature</span></a><a href="index.html#preis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12.6 12.4 3.7a1 1 0 0 1 .7-.3H20a1 1 0 0 1 1 1v6.9a1 1 0 0 1-.3.7l-8.9 8.9a1.5 1.5 0 0 1-2.1 0l-6.9-6.9a1.5 1.5 0 0 1 0-2.1z"/><circle cx="16.5" cy="7.5" r="1.3"/></svg><span>Preis</span></a><a href="index.html#mehr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>Mehr</span></a></nav><script>(function(){
+var d=document.querySelector('.dock');if(!d)return;
+var ids=['start','funktionen','preis','mehr'];var links=[].slice.call(d.querySelectorAll('a'));var ticking=false;
+function set(i){d.style.setProperty('--i',i);links.forEach(function(a,k){if(k===i){a.setAttribute('aria-current','page');}else{a.removeAttribute('aria-current');}});}
+function spy(){ticking=false;var line=window.innerHeight*0.4,idx=0;
+var end=window.innerHeight+window.pageYOffset>=document.documentElement.scrollHeight-4;
+if(end){idx=ids.length-1;}else{ids.forEach(function(id,k){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=line)idx=k;});}
+set(idx);}
+window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(spy);}},{passive:true});
+window.addEventListener('resize',spy);spy();})();</script>
 <footer id="mehr"><div class="shell f-in">
 <a class="brand" href="index.html" aria-label="mietblick">
 <img class="on-light" src="assets/wortmarke-petrol.png" alt="mietblick" width="900" height="240">
