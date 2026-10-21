@@ -89,6 +89,13 @@ border-bottom:1px solid transparent;transition:border-color .3s}
 .top.stuck .brand img{height:22px}
 .brand .on-dark{display:none}
 @media(max-width:759px){.top-in .status{display:none}}
+/* Mobil: Logo zentriert und grösser, Hero rückt nach oben an die Kopfzeile */
+@media(max-width:759px){
+.top-in{justify-content:center;padding:14px 0 10px}
+.brand img{height:34px}
+.top.stuck .brand img{height:30px}
+.hero{padding-top:26px}
+}
 
 /* Statusmarke */
 .status{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;
