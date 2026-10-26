@@ -315,7 +315,16 @@ html{scroll-behavior:auto}
 a{color:var(--lime)}
 .device{background:linear-gradient(165deg,#355E62 0%,#1B3639 42%,#0B1C1E 100%)}
 .doc th{background:rgba(243,248,250,.04)}
-}</style>
+}.rg-grid{display:grid;gap:16px;grid-template-columns:1fr;margin-top:10px}
+@media(min-width:720px){.rg-grid{grid-template-columns:1fr 1fr}}
+.rg-card{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.rg-card .cat{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-muted);margin:0 0 10px}
+.rg-card h3{font-size:20px;margin:0 0 8px}
+.rg-card p{color:var(--ink-muted);font-size:16px;margin:0 0 16px}
+.rg-card .more{margin-top:auto;font-weight:600;font-size:15px;color:var(--lime-ink);display:inline-flex;align-items:center;gap:6px}
+.rg-card:hover .more{gap:10px}
+.rg-card .more svg{transition:transform .4s var(--ease)}
+</style>
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -331,12 +340,11 @@ a{color:var(--lime)}
 <main id="inhalt">
 <section class="doc-head"><div class="shell narrow"><a class="doc-back" href="../index.html"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 2.5 4 7l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Zur Startseite</a><span class="eyebrow">Ratgeber · Mietrecht Schweiz</span><h1>Mietrecht, einfach erklärt.</h1><p class="version">Echte Fragen aus dem Mietalltag, mit der Rechtsgrundlage und einem klaren nächsten Schritt.</p></div></section>
 <div class="shell narrow">
-<div style="display:grid;gap:14px;grid-template-columns:1fr;margin-top:8px">
-<a class="card" href="streichen.html" style="text-decoration:none;color:inherit;display:block">
-<span class="eyebrow" style="margin-bottom:10px">Auszug</span>
-<h3>Muss ich nach zwei Jahren neu streichen?</h3>
-<p>Normale Abnutzung trägt der Vermieter. Wann du trotzdem beteiligt wirst, und was der Zeitwert damit zu tun hat.</p>
-</a>
+<div class="rg-grid">
+<a class="card rg-card" href="abfluss.html"><span class="cat">Unterhalt</span><h3>Wer zahlt, wenn der Abfluss verstopft?</h3><p>Den Siphon reinigst du selbst, die Leitung ist Sache des Vermieters. Wo die Grenze liegt.</p><span class="more">Lesen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+<a class="card rg-card" href="streichen.html"><span class="cat">Auszug</span><h3>Muss ich nach zwei Jahren neu streichen?</h3><p>Normale Abnutzung trägt der Vermieter. Wann du trotzdem beteiligt wirst.</p><span class="more">Lesen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+<a class="card rg-card" href="herd.html"><span class="cat">Mängel</span><h3>Der Herd ist defekt. Muss der Vermieter ihn ersetzen?</h3><p>Ein defekter Herd ist ein Mangel. Was du verlangen kannst, vom Ersatz bis zur Mietzinsreduktion.</p><span class="more">Lesen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+<a class="card rg-card" href="lampe.html"><span class="cat">Wohnung</span><h3>Darf ich eine Lampe selbst montieren?</h3><p>Aufhängen ist meist frei, feste Eingriffe brauchen Zustimmung. Was beim Auszug gilt.</p><span class="more">Lesen <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 7h8M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
 </div>
 <p class="hinweis" style="margin-top:32px"><strong>Keine juristische Auskunftsquelle.</strong> Dieser Ratgeber erklärt allgemeine Grundsätze aus öffentlich zugänglichen Quellen. Er ersetzt weder eine Rechtsberatung noch eine Prüfung deines Falls. Massgebend sind dein Vertrag, das Gesetz und im Streitfall die zuständige Stelle.</p>
 </div>
@@ -350,7 +358,7 @@ a{color:var(--lime)}
 <div>
 <nav aria-label="Seiten">
 <a href="../index.html">Start</a>
-<a href="index.html" aria-current="page">Ratgeber</a>
+<a href="index.html">Ratgeber</a>
 <a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>
 <a href="../datenschutz.html">Datenschutz</a>
 <a href="../impressum.html">Impressum</a>

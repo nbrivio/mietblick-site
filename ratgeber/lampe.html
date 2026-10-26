@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Darf ich eine Lampe selbst montieren? | mietblick</title>
+<meta name="description" content="Änderungen an der Wohnung nach Art. 260a OR: was ohne Zustimmung geht, was nicht, und was beim Auszug gilt.">
+<meta name="theme-color" content="#F7FBFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0F2426" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="mietblick">
+<meta property="og:title" content="Darf ich eine Lampe selbst montieren?">
+<meta property="og:description" content="Änderungen an der Wohnung nach Art. 260a OR: was ohne Zustimmung geht, was nicht, und was beim Auszug gilt.">
+<meta property="og:locale" content="de_CH">
+<meta property="og:url" content="https://mietblick-app.ch/ratgeber/lampe.html">
+<meta property="og:image" content="https://mietblick-app.ch/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://mietblick-app.ch/ratgeber/lampe.html">
+<link rel="icon" href="../assets/icon.png">
+<link rel="apple-touch-icon" href="../assets/icon.png">
+<style>:root{
+--petrol:#1B3639;--petrol-deep:#0F2426;--lime:#C5FF28;--lime-ink:#8FBF1A;
+--ice:#F7FBFF;--paper:#FFFFFF;--ink:#1B3639;--ink-muted:#4A6063;
+--hairline:#E4EBEE;--sage:#DDF0E6;
+--band:#1B3639;--band-ink:#F7FBFF;--band-muted:#9FB5B7;--band-line:rgba(247,251,255,.14);
+--r-chip:8px;--r-control:16px;--r-card:20px;--r-hero:24px;--r-pill:28px;
+--lift:0 1px 2px rgba(27,54,57,.04),0 18px 40px -22px rgba(27,54,57,.30);
+--lift-hi:0 2px 4px rgba(27,54,57,.05),0 30px 60px -28px rgba(27,54,57,.42);
+--lift-strong:0 2px 6px rgba(27,54,57,.06),0 48px 90px -44px rgba(27,54,57,.55);
+--ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;overflow-x:clip;background:var(--ice);color:var(--ink);
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%}
+
+/* Raster */
+.shell{max-width:1140px;margin:0 auto;padding:0 24px}
+.shell.narrow{max-width:780px}
+.sec{padding:clamp(72px,10vw,132px) 0}
+.sec-tight{padding:clamp(56px,7vw,92px) 0}
+.band{background:var(--band);color:var(--band-ink)}
+.band .lead,.band .muted{color:var(--band-muted)}
+.band .eyebrow{color:var(--lime)}
+
+/* Typografie */
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+color:var(--ink-muted);margin:0 0 18px;display:block}
+h1{font-size:clamp(40px,6.4vw,74px);line-height:1.03;letter-spacing:-.035em;font-weight:700;margin:0 0 22px}
+h2{font-size:clamp(29px,4.1vw,50px);line-height:1.09;letter-spacing:-.03em;font-weight:700;margin:0 0 20px}
+h3{font-size:19px;line-height:1.3;letter-spacing:-.01em;font-weight:600;margin:0 0 8px}
+.lead{font-size:clamp(18px,2vw,22px);line-height:1.5;color:var(--ink-muted);margin:0 0 28px;max-width:46ch}
+.muted{color:var(--ink-muted)}
+p{margin:0 0 16px}
+p:last-child{margin-bottom:0}
+
+/* Leseanzeige */
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--lime-ink);
+z-index:40;pointer-events:none}
+
+/* Schwebende Navigation unten (Liquid-Glass-Stil): Grid aus vier Feldern, eine Pille gleitet mit */
+.dock{--i:0;position:fixed;left:50%;bottom:max(18px,env(safe-area-inset-bottom));transform:translateX(-50%);
+z-index:30;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));width:min(calc(100vw - 32px),360px);
+padding:5px;border-radius:999px;isolation:isolate;
+background:rgba(250,253,255,.86);backdrop-filter:saturate(180%) blur(22px);-webkit-backdrop-filter:saturate(180%) blur(22px);
+border:1px solid rgba(255,255,255,.7);box-shadow:0 6px 18px -8px rgba(27,54,57,.22),inset 0 1px 0 rgba(255,255,255,.8)}
+.dock .pill{position:absolute;top:5px;bottom:5px;left:5px;width:calc((100% - 10px) / 4);
+border-radius:999px;background:rgba(197,255,40,.6);box-shadow:inset 0 0 0 1px rgba(27,54,57,.08);z-index:-1;
+transform:translateX(calc(var(--i) * 100%));will-change:transform;
+transition:transform .6s cubic-bezier(.32,.72,0,1)}
+.dock a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:54px;
+font-size:11px;font-weight:600;letter-spacing:-.005em;line-height:1;color:#1B3639;text-decoration:none;white-space:nowrap;border-radius:999px;transition:color .45s cubic-bezier(.32,.72,0,1)}
+.dock a svg{transition:transform .6s cubic-bezier(.32,.72,0,1)}
+.dock a[aria-current="page"] svg{transform:translateY(-1px) scale(1.08)}
+.dock a:focus-visible{outline:2px solid #1B3639;outline-offset:2px}
+.dock svg{width:22px;height:22px;flex:none}
+footer{padding-bottom:calc(104px + env(safe-area-inset-bottom))}
+@media(prefers-reduced-motion:reduce){.dock .pill,.dock a,.dock a svg{transition:none}}
+/* Kopfzeile */
+.top{position:sticky;top:0;z-index:20;background:rgba(247,251,255,.82);
+backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);
+border-bottom:1px solid transparent;transition:border-color .3s}
+.top.stuck{border-bottom-color:var(--hairline)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+.brand{display:inline-flex;align-items:center}
+.brand img{height:26px;width:auto;display:block;transition:height .35s var(--ease)}
+.top.stuck .brand img{height:22px}
+.brand .on-dark{display:none}
+@media(max-width:759px){.top-in .status{display:none}}
+/* Mobil: Logo zentriert und grösser, Hero rückt nach oben an die Kopfzeile */
+@media(max-width:759px){
+.top-in{justify-content:center;padding:14px 0 10px}
+.brand img{height:34px}
+.top.stuck .brand img{height:30px}
+.hero{padding-top:8px}
+}
+
+/* Statusmarke */
+.status{display:inline-flex;align-items:center;gap:9px;font-size:13px;font-weight:600;
+padding:8px 15px;border-radius:var(--r-pill);border:1px solid var(--hairline);
+background:var(--paper);color:var(--ink);white-space:nowrap;margin:0}
+.status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime-ink);flex:0 0 auto}
+.band .status{background:rgba(247,251,255,.08);border-color:var(--band-line);color:var(--band-ink)}
+.band .status::before{background:var(--lime)}
+
+/* Schaltflaechen */
+.btn{display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;
+font-size:17px;padding:16px 28px;border-radius:var(--r-pill);border:1px solid transparent;
+transition:transform .25s var(--ease),background-color .25s,border-color .25s,box-shadow .25s var(--ease)}
+.btn-primary{background:var(--petrol);color:var(--ice)}
+.btn-primary:hover{background:var(--petrol-deep);transform:translateY(-2px);
+box-shadow:0 14px 30px -14px rgba(27,54,57,.6)}
+.btn-primary:active{transform:translateY(0) scale(.985)}
+.band .btn-primary{background:var(--lime);color:var(--petrol-deep)}
+.band .btn-primary:hover{background:#d4ff5c}
+.btn-ghost{border-color:var(--hairline);color:var(--ink);background:var(--paper)}
+.btn-ghost:hover{border-color:var(--ink-muted);transform:translateY(-2px)}
+.btn-ghost:active{transform:translateY(0) scale(.985)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+
+/* Hero */
+.hero{padding:clamp(44px,6vw,80px) 0 clamp(64px,8vw,104px)}
+.hero-grid{display:grid;gap:clamp(40px,6vw,64px);align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.02fr .98fr}}
+.hero h1{margin-top:18px}
+.hero .note{font-size:15px;color:var(--ink-muted);margin:22px 0 0}
+.hero-art{position:relative;display:grid;place-items:center;min-height:300px}
+.hero-art .glow{position:absolute;width:118%;aspect-ratio:1;border-radius:50%;
+background:radial-gradient(closest-side,rgba(197,255,40,.55),rgba(197,255,40,.16) 52%,rgba(197,255,40,0) 76%)}
+.hero-art img{position:relative;width:min(460px,88%);height:auto}
+
+/* Alltagsband */
+.beats{margin:clamp(28px,4vw,44px) 0 0;border-top:1px solid var(--band-line)}
+.beat{position:relative;padding:22px 0;border-bottom:1px solid var(--band-line);display:grid;gap:4px}
+@media(min-width:760px){.beat{grid-template-columns:132px 1fr;gap:28px;align-items:baseline}}
+.beat .k{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime)}
+.beat .v{font-size:clamp(18px,2vw,21px);line-height:1.45;margin:0;max-width:62ch}
+.turn{margin:clamp(30px,4vw,44px) 0 0;font-size:clamp(20px,2.4vw,26px);line-height:1.4;
+letter-spacing:-.015em;max-width:32ch}
+
+/* Funktionsabschnitt */
+.feature{display:grid;gap:clamp(34px,5vw,72px);align-items:center}
+@media(min-width:900px){
+.feature{grid-template-columns:1fr 1fr}
+.feature.flip .feature-art{order:-1}
+}
+.feature + .feature{margin-top:clamp(72px,9vw,128px)}
+.feature-art{display:grid;place-items:center}
+.points{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
+.points li{display:grid;grid-template-columns:22px 1fr;gap:12px;align-items:start;
+font-size:16px;line-height:1.5}
+.points .t{font-weight:600}
+.tick{width:22px;height:22px;border-radius:50%;background:var(--sage);display:grid;
+place-items:center;margin-top:1px;color:var(--petrol)}
+.tick svg{width:12px;height:12px;display:block}
+.band .tick{background:rgba(197,255,40,.18);color:var(--lime)}
+
+/* Geraeterahmen */
+.device{position:relative;width:min(306px,78vw);padding:11px;border-radius:50px;
+background:linear-gradient(165deg,#2B5054 0%,#1B3639 42%,#102325 100%);
+box-shadow:var(--lift-strong)}
+.device::after{content:"";position:absolute;inset:0;border-radius:50px;pointer-events:none;
+box-shadow:inset 0 1px 0 rgba(247,251,255,.22),inset 0 0 0 1px rgba(15,36,38,.5)}
+.device img{display:block;width:100%;height:auto;border-radius:40px;background:var(--ice)}
+
+/* Kennzahl */
+.pull{margin:clamp(28px,4vw,40px) 0 0;padding:24px 26px;border-radius:var(--r-card);
+background:var(--paper);box-shadow:var(--lift);display:grid;gap:4px}
+.band .pull{background:rgba(247,251,255,.06);box-shadow:none;border:1px solid var(--band-line)}
+.pull .n{font-size:clamp(30px,4vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.05;
+font-variant-numeric:tabular-nums}
+.pull .c{font-size:15px;color:var(--ink-muted)}
+.band .pull .c{color:var(--band-muted)}
+
+/* Fallkacheln */
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:26px 0 0;
+padding:0;list-style:none}
+@media(min-width:620px){.tiles{grid-template-columns:repeat(3,1fr)}}
+.tile{background:var(--paper);border-radius:var(--r-card);padding:14px 14px 16px;
+box-shadow:var(--lift);display:grid;gap:10px;justify-items:start;
+transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--lift-hi)}
+.tile img{width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;border-radius:var(--r-chip)}
+.tile span{font-size:15px;font-weight:600;line-height:1.3}
+
+/* Zweispaltig mit Illustration */
+.split{display:grid;gap:clamp(34px,5vw,64px);align-items:center}
+@media(min-width:900px){.split{grid-template-columns:1.06fr .94fr}}
+.split-art{display:grid;place-items:center}
+.split-art img{width:min(380px,78%);height:auto}
+
+/* Karten */
+.cards{display:grid;gap:14px;grid-template-columns:1fr;margin:clamp(30px,4vw,44px) 0 0}
+@media(min-width:760px){.cards{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--paper);border-radius:var(--r-card);padding:26px;box-shadow:var(--lift);
+transition:transform .3s var(--ease),box-shadow .3s var(--ease),background-color .3s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--lift-hi)}
+.card p{color:var(--ink-muted);font-size:16px;margin:0}
+.band .card{background:rgba(247,251,255,.06);box-shadow:none;border:1px solid var(--band-line)}
+.band .card:hover{background:rgba(247,251,255,.09);box-shadow:none}
+.band .card p{color:var(--band-muted)}
+
+/* Belegmarken */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:clamp(26px,3vw,36px) 0 0;padding:0;list-style:none}
+.chips li{font-size:15px;font-weight:600;padding:10px 16px;border-radius:var(--r-pill);
+border:1px solid var(--band-line);background:rgba(247,251,255,.06);
+transition:background-color .25s,border-color .25s,transform .25s var(--ease)}
+.chips li:hover{background:rgba(197,255,40,.12);border-color:rgba(197,255,40,.45);transform:translateY(-2px)}
+
+/* Preis */
+.price{background:var(--paper);border-radius:var(--r-hero);padding:clamp(28px,4vw,44px);
+box-shadow:var(--lift);max-width:620px}
+.price .n{font-size:clamp(34px,4.6vw,46px);font-weight:700;letter-spacing:-.03em;line-height:1.05;margin:0 0 10px}
+
+/* Abschluss */
+.launch{display:grid;gap:clamp(28px,4vw,48px);align-items:center;justify-items:center;text-align:center}
+.launch-art{position:relative;display:grid;place-items:center}
+.launch-art .glow{position:absolute;width:168%;aspect-ratio:1;border-radius:50%;
+background:radial-gradient(closest-side,rgba(197,255,40,.30),rgba(197,255,40,0) 70%)}
+.launch-art img{position:relative;width:min(210px,62vw);height:auto}
+.launch .lead{margin-inline:auto}
+
+/* Rechtstexte */
+.doc-head{padding:clamp(36px,5vw,68px) 0 clamp(18px,2.5vw,28px)}
+.doc-head h1{font-size:clamp(34px,5vw,58px);margin:0 0 14px}
+.doc-head .version{color:var(--ink-muted);font-size:15px;margin:0}
+.doc{background:var(--paper);border-radius:var(--r-hero);padding:clamp(26px,4vw,44px);
+margin:0 auto clamp(56px,8vw,96px);box-shadow:var(--lift)}
+.doc h2{font-size:clamp(20px,2.4vw,25px);line-height:1.25;margin:38px 0 10px;letter-spacing:-.015em}
+.doc > h2:first-child{margin-top:0}
+.doc p,.doc li{max-width:68ch}
+.doc ul,.doc ol{padding-left:22px;margin:0 0 16px}
+.doc li{margin:8px 0}
+.doc .tablewrap{overflow-x:auto;margin:0 0 22px;border-radius:var(--r-control);
+border:1px solid var(--hairline);-webkit-overflow-scrolling:touch}
+.doc table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
+.doc th{text-align:left;font-weight:700;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+color:var(--ink-muted);padding:14px 16px;background:var(--ice);
+border-bottom:1px solid var(--hairline);white-space:nowrap}
+.doc td{padding:14px 16px;border-bottom:1px solid var(--hairline);vertical-align:top;line-height:1.5}
+.doc tbody tr:last-child td{border-bottom:0}
+.doc-back{display:inline-flex;align-items:center;gap:8px;font-weight:600;text-decoration:none;
+font-size:15px;margin:0 0 22px;color:var(--ink-muted)}
+.doc-back:hover{color:var(--ink)}
+a{color:var(--petrol);text-underline-offset:2px}
+
+/* Fusszeile */
+footer{border-top:1px solid var(--hairline);padding:40px 0 calc(112px + env(safe-area-inset-bottom));color:var(--ink-muted);font-size:15px}
+footer .f-in{display:grid;gap:20px}
+@media(min-width:760px){.f-in{grid-template-columns:auto 1fr;align-items:start;gap:48px}}
+footer nav a{display:inline-block;margin:0 20px 8px 0;color:var(--ink);font-weight:600;text-decoration:none}
+footer nav a:hover{text-decoration:underline}
+footer .f-note{margin-top:14px;max-width:62ch}
+
+/* Bewegung 1: Inhalt kommt an */
+.js .reveal{opacity:0;transform:translateY(20px);
+transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.js .feature-art .device{opacity:0;transform:translateY(26px) scale(.975);
+transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.js .feature-art.in .device{opacity:1;transform:none}
+/* Die Linien im Alltagsband ziehen sich der Reihe nach ein */
+.js .beat::after{content:"";position:absolute;left:0;bottom:-1px;height:1px;width:0;
+background:var(--lime);opacity:.5;transition:width 1.1s var(--ease)}
+.js .beats.in .beat::after{width:100%}
+.js .beats.in .beat:nth-child(1)::after{transition-delay:.10s}
+.js .beats.in .beat:nth-child(2)::after{transition-delay:.25s}
+.js .beats.in .beat:nth-child(3)::after{transition-delay:.40s}
+.js .beats.in .beat:nth-child(4)::after{transition-delay:.55s}
+/* Bewegung 2: Tiefe beim Scrollen */
+.js [data-par]{will-change:transform}
+
+/* Fokus */
+a:focus-visible,.btn:focus-visible{outline:3px solid var(--lime-ink);outline-offset:3px;border-radius:var(--r-chip)}
+.band a:focus-visible,.band .btn:focus-visible{outline-color:var(--lime)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:24px;top:12px;z-index:41;position:fixed;background:var(--petrol);color:var(--ice);
+padding:12px 18px;border-radius:var(--r-control);text-decoration:none}
+
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.js .reveal,.js .feature-art .device{opacity:1;transform:none;transition:none}
+.js .beat::after{display:none}
+.js [data-par]{transform:none!important;will-change:auto}
+.btn:hover,.card:hover,.tile:hover,.chips li:hover{transform:none}
+.brand img,.top.stuck .brand img{transition:none}
+.progress{display:none}
+}
+
+@media(prefers-color-scheme:dark){
+:root{
+--ice:#0F2426;--paper:#1A3134;--ink:#F3F8FA;--ink-muted:#A5BBBD;
+--hairline:rgba(243,248,250,.12);--sage:rgba(197,255,40,.16);
+--band:#153032;--band-line:rgba(243,248,250,.12);
+--lift:0 1px 2px rgba(0,0,0,.3),0 18px 40px -22px rgba(0,0,0,.6);
+--lift-hi:0 2px 4px rgba(0,0,0,.35),0 30px 60px -28px rgba(0,0,0,.7);
+--lift-strong:0 2px 6px rgba(0,0,0,.4),0 48px 90px -44px rgba(0,0,0,.85);
+}
+.top{background:rgba(15,36,38,.82)}
+.dock{background:rgba(15,36,38,.86);border-color:rgba(243,248,250,.14);box-shadow:0 6px 18px -8px rgba(0,0,0,.5),inset 0 1px 0 rgba(243,248,250,.08)}
+.dock a{color:#F7FBFF}
+.dock .pill{background:rgba(197,255,40,.9);box-shadow:none}
+.dock a[aria-current="page"]{color:#0F2426}
+.brand .on-light{display:none}
+.brand .on-dark{display:block}
+.status{background:rgba(243,248,250,.07);border-color:var(--hairline)}
+.status::before{background:var(--lime)}
+.btn-primary{background:var(--lime);color:var(--petrol-deep)}
+.btn-primary:hover{background:#d4ff5c;box-shadow:0 14px 30px -14px rgba(197,255,40,.35)}
+.btn-ghost{background:transparent}
+.tick{color:var(--lime)}
+.progress{background:var(--lime)}
+a{color:var(--lime)}
+.device{background:linear-gradient(165deg,#355E62 0%,#1B3639 42%,#0B1C1E 100%)}
+.doc th{background:rgba(243,248,250,.04)}
+}</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#inhalt">Zum Inhalt</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="top"><div class="shell top-in">
+<a class="brand" href="../index.html" aria-label="mietblick, zur Startseite">
+<img class="on-light" src="../assets/wortmarke-petrol.png" alt="mietblick" width="900" height="240">
+<img class="on-dark" src="../assets/wortmarke-weiss.png" alt="" aria-hidden="true" width="900" height="240">
+</a>
+
+</div></header>
+<main id="inhalt">
+<section class="doc-head"><div class="shell narrow"><a class="doc-back" href="index.html"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 2.5 4 7l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Zum Ratgeber</a><span class="eyebrow">Ratgeber · Wohnung</span><h1>Darf ich eine Lampe selbst montieren?</h1><p class="version">Allgemeine Information · Stand 26. Oktober 2026</p></div></section>
+<div class="shell narrow"><article class="doc">
+<p><strong>Kurz gesagt:</strong> Eine Lampe an einen bestehenden Deckenanschluss hängen ist meist unproblematisch. Eingriffe in die feste Installation oder bauliche Änderungen brauchen die schriftliche Zustimmung des Vermieters.</p>
+<h2>Was das Gesetz sagt</h2>
+<p>Nach <strong>Art. 260a OR</strong> darfst du Erneuerungen und Änderungen an der Wohnung nur vornehmen, wenn der Vermieter schriftlich zustimmt. Hat die Wohnung am Ende der Miete einen erheblichen Mehrwert, kannst du dafür eine angemessene Entschädigung verlangen. Dieser Anspruch lässt sich im Vertrag ausschliessen.</p>
+<p>Quellen: <a href="https://www.fedlex.admin.ch/eli/cc/27/317_321_377/de" rel="noopener">Obligationenrecht, Fedlex</a>; Einordnung: <a href="https://law.ch/lawinfo/mietrecht-miete-mietvertrag/aenderungen-an-der-mietsache" rel="noopener">law.ch</a>. Stand: 26. Oktober 2026.</p>
+<h2>Was häufig gilt</h2>
+<ul>
+<li>Eine Leuchte an einen vorhandenen Lampenanschluss hängen und beim Auszug wieder abnehmen ist normaler Gebrauch, keine Änderung im Sinne des Gesetzes.</li>
+<li>Bohrlöcher für die Befestigung sind meist in Ordnung. Beim Auszug schliesst du sie fachgerecht.</li>
+<li>Neue feste Leitungen, zusätzliche Anschlüsse oder Eingriffe in die Elektroinstallation brauchen die Zustimmung des Vermieters und gehören an eine konzessionierte Fachperson.</li>
+</ul>
+<h2>Was offen bleibt</h2>
+<p>Ob dein Vertrag strengere Regeln enthält, und wo im Einzelfall die Grenze zwischen normalem Gebrauch und zustimmungspflichtiger Änderung liegt.</p>
+<h2>Nächster Schritt</h2>
+<p>Für alles, was über das Aufhängen hinausgeht, hol vorher schriftlich die Zustimmung ein. Elektrische Arbeiten an der festen Installation überlässt du einer Fachperson.</p>
+<p class="hinweis"><strong>Keine juristische Auskunftsquelle.</strong> Diese Seite erklärt allgemeine Grundsätze aus öffentlich zugänglichen Quellen. Sie ersetzt weder eine Rechtsberatung noch eine Prüfung deines Falls. Massgebend sind dein Vertrag, das Gesetz und im Streitfall die zuständige Stelle. Mehr dazu in den <a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>.</p>
+</article></div>
+</main>
+<nav class="dock" aria-label="Seiten" style="--i:3"><span class="pill" aria-hidden="true"></span><a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Start</span></a><a href="../index.html#funktionen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h5"/></svg><span>Feature</span></a><a href="../index.html#preis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12.6 12.4 3.7a1 1 0 0 1 .7-.3H20a1 1 0 0 1 1 1v6.9a1 1 0 0 1-.3.7l-8.9 8.9a1.5 1.5 0 0 1-2.1 0l-6.9-6.9a1.5 1.5 0 0 1 0-2.1z"/><circle cx="16.5" cy="7.5" r="1.3"/></svg><span>Preis</span></a><a href="../index.html#mehr" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>Mehr</span></a></nav>
+<footer id="mehr"><div class="shell f-in">
+<a class="brand" href="../index.html" aria-label="mietblick">
+<img class="on-light" src="../assets/wortmarke-petrol.png" alt="mietblick" width="900" height="240">
+<img class="on-dark" src="../assets/wortmarke-weiss.png" alt="" aria-hidden="true" width="900" height="240">
+</a>
+<div>
+<nav aria-label="Seiten">
+<a href="../index.html">Start</a>
+<a href="index.html">Ratgeber</a>
+<a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>
+<a href="../datenschutz.html">Datenschutz</a>
+<a href="../impressum.html">Impressum</a>
+<a href="../support.html">Support</a>
+</nav>
+<p class="f-note">Ryse Solutions KLG &middot; <a href="mailto:support@mietblick-app.ch">support@mietblick-app.ch</a></p>
+<p class="f-note">mietblick ist eine Orientierungshilfe und keine juristische Auskunftsquelle. Die Inhalte ersetzen keine Rechtsberatung.</p>
+<p class="f-note">Diese Website lädt nichts von Dritten nach: keine Schriften, keine Statistik, keine Einbettungen. Darum braucht sie auch keine Cookies.</p>
+</div>
+</div></footer>
+<script>
+(function(){
+  var doc=document.documentElement;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)');
+  var top=document.querySelector('.top');
+  var bar=document.querySelector('.progress');
+  var pars=[].slice.call(document.querySelectorAll('[data-par]'));
+  var ticking=false;
+
+  function frame(){
+    ticking=false;
+    var y=window.scrollY||0;
+    if(top) top.classList.toggle('stuck', y>4);
+    if(bar){
+      var max=doc.scrollHeight-window.innerHeight;
+      bar.style.width=(max>0?Math.min(1,Math.max(0,y/max))*100:0)+'%';
+    }
+    if(!reduce.matches){
+      var vh=window.innerHeight;
+      for(var i=0;i<pars.length;i++){
+        var el=pars[i], r=el.getBoundingClientRect();
+        if(r.bottom<-150||r.top>vh+150) continue;
+        var mid=(r.top+r.height/2-vh/2)/vh;
+        var k=parseFloat(el.getAttribute('data-par'))||1;
+        el.style.transform='translate3d(0,'+(mid*-k*30).toFixed(2)+'px,0)';
+      }
+    }
+  }
+  function onScroll(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
+  frame();
+  addEventListener('scroll',onScroll,{passive:true});
+  addEventListener('resize',onScroll,{passive:true});
+
+  // Die Zahl zaehlt hoch, sobald die Karte sichtbar wird
+  function countUp(el){
+    var to=parseInt(el.getAttribute('data-count'),10);
+    if(!to||reduce.matches){ return; }
+    var t0=null, dur=1000;
+    function step(t){
+      if(t0===null) t0=t;
+      var p=Math.min(1,(t-t0)/dur);
+      el.textContent=String(Math.round(to*(1-Math.pow(1-p,3))));
+      if(p<1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var items=document.querySelectorAll('.reveal,.feature-art,.beats,[data-count]');
+  if(!items.length) return;
+  if(!('IntersectionObserver' in window)){
+    for(var j=0;j<items.length;j++){
+      items[j].classList.add('in');
+      if(items[j].hasAttribute('data-count')) countUp(items[j]);
+    }
+    return;
+  }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var el=e.target;
+      var d=parseInt(el.getAttribute('data-d')||'0',10);
+      if(d) el.style.transitionDelay=(d*60)+'ms';
+      el.classList.add('in');
+      if(el.hasAttribute('data-count')) countUp(el);
+      io.unobserve(el);
+    });
+  },{rootMargin:'0px 0px -12% 0px',threshold:0});
+  for(var k=0;k<items.length;k++) io.observe(items[k]);
+})();
+</script>
+</body>
+</html>
