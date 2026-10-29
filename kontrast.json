@@ -1,0 +1,46 @@
+{
+  "paare": [
+    {
+      "name": "Fliesstext auf Karte",
+      "vorn": "ink",
+      "hinten": "paper",
+      "ziel": 7.0
+    },
+    {
+      "name": "Fliesstext auf Seite",
+      "vorn": "ink",
+      "hinten": "ice",
+      "ziel": 7.0
+    },
+    {
+      "name": "Sekundaertext Karte",
+      "vorn": "ink-muted",
+      "hinten": "paper",
+      "ziel": 7.0
+    },
+    {
+      "name": "Sekundaertext Seite",
+      "vorn": "ink-muted",
+      "hinten": "ice",
+      "ziel": 7.0
+    },
+    {
+      "name": "Akzent auf Band",
+      "vorn": "lime",
+      "hinten": "band",
+      "ziel": 4.5
+    },
+    {
+      "name": "Akzenttext auf Karte",
+      "vorn": "accent-text",
+      "hinten": "paper",
+      "ziel": 7.0
+    },
+    {
+      "name": "Akzenttext auf Seite",
+      "vorn": "accent-text",
+      "hinten": "ice",
+      "ziel": 7.0
+    }
+  ]
+}
