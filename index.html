@@ -26,7 +26,12 @@
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/app.css">
-<script>document.documentElement.classList.add('js')</script>
+<script>/* Sicherheitsnetz: js schaltet die Animationen ein. Meldet sich das Hauptskript kurz
+   nach dem Laden nicht, wird js wieder entfernt, damit kein Inhalt unsichtbar bleibt. */
+(function(){var d=document,w=window,h=d.documentElement;h.classList.add('js');
+function pruefen(){if(!w.__animBereit){h.classList.remove('js');}}
+w.addEventListener('load',function(){setTimeout(pruefen,800);},false);
+setTimeout(pruefen,4000);})();</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mietblick-app.ch/#organisation","name":"Ryse Solutions KLG","url":"https://mietblick-app.ch/","email":"support@mietblick-app.ch","address":{"@type":"PostalAddress","streetAddress":"Talackerstrasse 15","postalCode":"5037","addressLocality":"Muhen","addressCountry":"CH"},"identifier":{"@type":"PropertyValue","propertyID":"UID","value":"CHE-268.832.753"}},{"@type":"WebSite","@id":"https://mietblick-app.ch/#website","url":"https://mietblick-app.ch/","name":"mietblick","description":"Mietrecht verstehen, Fristen rechnen, Wohnung dokumentieren. Für Mieterinnen und Mieter in der Schweiz.","inLanguage":"de-CH","publisher":{"@id":"https://mietblick-app.ch/#organisation"}},{"@type":"WebPage","@id":"https://mietblick-app.ch/#seite","url":"https://mietblick-app.ch/","name":"mietblick, deine Wohnung","description":"mietblick liest deinen Mietvertrag, rechnet Fristen und erklärt in einem Satz, was gilt. Für Mieterinnen und Mieter in der Schweiz. Alles bleibt auf dem iPhone.","inLanguage":"de-CH","isPartOf":{"@id":"https://mietblick-app.ch/#website"}},{"@type":"SoftwareApplication","@id":"https://mietblick-app.ch/#app","name":"mietblick","applicationCategory":"UtilitiesApplication","operatingSystem":"iOS","description":"mietblick liest deinen Mietvertrag, rechnet Fristen und erklärt in einem Satz, was gilt. Für Mieterinnen und Mieter in der Schweiz. Alles bleibt auf dem iPhone.","inLanguage":"de-CH","publisher":{"@id":"https://mietblick-app.ch/#organisation"},"offers":{"@type":"Offer","name":"Jahresabo","price":"6.00","priceCurrency":"CHF"}}]}</script>
 </head>
 <body>
@@ -233,12 +238,13 @@ window.addEventListener('resize',spy);spy();})();</script>
   }
 
   var items=document.querySelectorAll('.reveal,.feature-art,.beats,[data-count]');
-  if(!items.length) return;
+  if(!items.length){ window.__animBereit=1; return; }
   if(!('IntersectionObserver' in window)){
     for(var j=0;j<items.length;j++){
       items[j].classList.add('in');
       if(items[j].hasAttribute('data-count')) countUp(items[j]);
     }
+    window.__animBereit=1;
     return;
   }
   var io=new IntersectionObserver(function(entries){
@@ -253,6 +259,7 @@ window.addEventListener('resize',spy);spy();})();</script>
     });
   },{rootMargin:'0px 0px -12% 0px',threshold:0});
   for(var k=0;k<items.length;k++) io.observe(items[k]);
+  window.__animBereit=1;  // Signal an das Sicherheitsnetz im Kopf
 })();
 </script>
 </body>
