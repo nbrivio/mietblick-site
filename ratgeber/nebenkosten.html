@@ -30,13 +30,35 @@ setTimeout(pruefen,4000);})();</script>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt</a>
 <div class="progress" aria-hidden="true"></div>
-<header class="top"><div class="shell top-in">
+<header class="top"><div class="top-in">
 <a class="brand" href="../index.html" aria-label="mietblick, zur Startseite">
 <img class="on-light" src="../assets/wortmarke-petrol.png" alt="mietblick" width="900" height="240">
 <img class="on-dark" src="../assets/wortmarke-weiss.png" alt="" aria-hidden="true" width="900" height="240">
 </a>
-
+<nav class="top-nav" aria-label="Hauptnavigation">
+<a href="../index.html#funktionen">Funktionen</a>
+<a href="../ratgeber/">Ratgeber</a>
+<a href="../index.html#preis">Preis</a>
+</nav>
+<div class="top-right">
+<a class="btn btn-primary btn-sm" href="../index.html#funktionen">Was sie kann</a>
+<button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen"><span></span></button>
+</div>
+<div class="menu" id="menu" hidden>
+<a href="../index.html#funktionen">Funktionen</a>
+<a href="../ratgeber/">Ratgeber</a>
+<a href="../index.html#preis">Preis</a>
+<a class="sub" href="../support.html">Support</a>
+<a class="sub" href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>
+<a class="sub" href="../datenschutz.html">Datenschutz</a>
+<a class="sub" href="../impressum.html">Impressum</a>
+</div>
 </div></header>
+<script>(function(){var b=document.querySelector('.burger'),m=document.getElementById('menu');if(!b||!m)return;
+function setz(offen){b.setAttribute('aria-expanded',offen?'true':'false');b.setAttribute('aria-label',offen?'Menü schliessen':'Menü öffnen');if(offen){m.removeAttribute('hidden');}else{m.setAttribute('hidden','');}}
+b.addEventListener('click',function(){setz(b.getAttribute('aria-expanded')!=='true');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){setz(false);b.focus();}});
+m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});})();</script>
 <main id="inhalt">
 <section class="doc-head"><div class="shell narrow"><a class="doc-back" href="index.html"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M8.5 2.5 4 7l4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Zum Ratgeber</a><span class="eyebrow">Ratgeber · Nebenkosten</span><h1>Wie lange habe ich Zeit, eine Nebenkostenabrechnung zu prüfen?</h1><p class="version">Allgemeine Information · Stand 26. Oktober 2026</p></div></section>
 <div class="shell narrow"><article class="doc">
@@ -58,24 +80,32 @@ setTimeout(pruefen,4000);})();</script>
 <p class="hinweis"><strong>Keine juristische Auskunftsquelle.</strong> Diese Seite erklärt allgemeine Grundsätze aus öffentlich zugänglichen Quellen. Sie ersetzt weder eine Rechtsberatung noch eine Prüfung deines Falls. Massgebend sind dein Vertrag, das Gesetz und im Streitfall die zuständige Stelle. Mehr dazu in den <a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>.</p>
 </article></div>
 </main>
-<nav class="dock" aria-label="Seiten" style="--i:3"><span class="pill" aria-hidden="true"></span><a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Start</span></a><a href="../index.html#funktionen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h5"/></svg><span>Feature</span></a><a href="../index.html#preis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12.6 12.4 3.7a1 1 0 0 1 .7-.3H20a1 1 0 0 1 1 1v6.9a1 1 0 0 1-.3.7l-8.9 8.9a1.5 1.5 0 0 1-2.1 0l-6.9-6.9a1.5 1.5 0 0 1 0-2.1z"/><circle cx="16.5" cy="7.5" r="1.3"/></svg><span>Preis</span></a><a href="../index.html#mehr" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>Mehr</span></a></nav>
-<footer id="mehr"><div class="shell f-in">
-<a class="brand" href="../index.html" aria-label="mietblick">
-<img class="on-light" src="../assets/wortmarke-petrol.png" alt="mietblick" width="900" height="240">
-<img class="on-dark" src="../assets/wortmarke-weiss.png" alt="" aria-hidden="true" width="900" height="240">
-</a>
-<div>
-<nav aria-label="Seiten">
+<footer id="mehr"><div class="shell">
+<div class="foot-top">
+<p class="foot-claim">Dein Zuhause,<br>klar vor Augen.</p>
+<div class="foot-cols">
+<nav aria-label="Seiten"><h2 class="foot-h">Seiten</h2>
 <a href="../index.html">Start</a>
-<a href="index.html">Ratgeber</a>
+<a href="../index.html#funktionen">Funktionen</a>
+<a href="../index.html#preis">Preis</a>
+<a href="../ratgeber/">Ratgeber</a>
+</nav>
+<nav aria-label="Rechtliches"><h2 class="foot-h">Rechtliches</h2>
 <a href="../nutzungsbedingungen.html">Nutzungsbedingungen</a>
 <a href="../datenschutz.html">Datenschutz</a>
 <a href="../impressum.html">Impressum</a>
-<a href="../support.html">Support</a>
 </nav>
-<p class="f-note">Ryse Solutions KLG &middot; <a href="mailto:support@mietblick-app.ch">support@mietblick-app.ch</a></p>
-<p class="f-note">mietblick ist eine Orientierungshilfe und keine juristische Auskunftsquelle. Die Inhalte ersetzen keine Rechtsberatung.</p>
-<p class="f-note">Diese Website lädt nichts von Dritten nach: keine Schriften, keine Statistik, keine Einbettungen. Darum braucht sie auch keine Cookies.</p>
+<div><h2 class="foot-h">Kontakt</h2>
+<a href="../support.html">Support</a>
+<a href="mailto:support@mietblick-app.ch">support@mietblick-app.ch</a>
+<p>Ryse Solutions KLG</p>
+</div>
+</div>
+</div>
+<a class="brand foot-brand" href="../index.html" aria-label="mietblick, zur Startseite"><img src="../assets/wortmarke-weiss.png" alt="mietblick" width="900" height="240"></a>
+<div class="foot-legal">
+<p>mietblick ist eine Orientierungshilfe und keine juristische Auskunftsquelle. Die Inhalte ersetzen keine Rechtsberatung.</p>
+<p>Diese Website lädt nichts von Dritten nach: keine Schriften von fremden Servern, keine Statistik, keine Einbettungen. Darum braucht sie auch keine Cookies.</p>
 </div>
 </div></footer>
 <script>

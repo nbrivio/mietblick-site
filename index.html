@@ -37,25 +37,46 @@ setTimeout(pruefen,4000);})();</script>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt</a>
 <div class="progress" aria-hidden="true"></div>
-<header class="top"><div class="shell top-in">
+<header class="top"><div class="top-in">
 <a class="brand" href="index.html" aria-label="mietblick, zur Startseite">
 <img class="on-light" src="assets/wortmarke-petrol.png" alt="mietblick" width="900" height="240">
 <img class="on-dark" src="assets/wortmarke-weiss.png" alt="" aria-hidden="true" width="900" height="240">
 </a>
-
+<nav class="top-nav" aria-label="Hauptnavigation">
+<a href="index.html#funktionen">Funktionen</a>
+<a href="ratgeber/">Ratgeber</a>
+<a href="index.html#preis">Preis</a>
+</nav>
+<div class="top-right">
+<a class="btn btn-primary btn-sm" href="index.html#funktionen">Was sie kann</a>
+<button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen"><span></span></button>
+</div>
+<div class="menu" id="menu" hidden>
+<a href="index.html#funktionen">Funktionen</a>
+<a href="ratgeber/">Ratgeber</a>
+<a href="index.html#preis">Preis</a>
+<a class="sub" href="support.html">Support</a>
+<a class="sub" href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
+<a class="sub" href="datenschutz.html">Datenschutz</a>
+<a class="sub" href="impressum.html">Impressum</a>
+</div>
 </div></header>
+<script>(function(){var b=document.querySelector('.burger'),m=document.getElementById('menu');if(!b||!m)return;
+function setz(offen){b.setAttribute('aria-expanded',offen?'true':'false');b.setAttribute('aria-label',offen?'Menü schliessen':'Menü öffnen');if(offen){m.removeAttribute('hidden');}else{m.setAttribute('hidden','');}}
+b.addEventListener('click',function(){setz(b.getAttribute('aria-expanded')!=='true');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){setz(false);b.focus();}});
+m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});})();</script>
 <main id="inhalt">
 
 <section class="hero" id="start">
-<div class="shell hero-grid">
+<div class="shell">
 <div class="reveal">
 <p class="status">Bald im App Store</p>
-<h1>Dein Zuhause,<br>klar vor Augen.</h1>
+<h1>Was steht eigentlich in deinem Mietvertrag?</h1>
 <p class="lead">mietblick liest deinen Mietvertrag, rechnet deine Fristen und erklärt in einem Satz, was gilt. Für Mieterinnen und Mieter in der Schweiz.</p>
 <div class="btns"><a class="btn btn-primary" href="#funktionen">Ansehen, was sie kann</a></div>
 <p class="note">Kein Konto, keine Cloud. Alles bleibt auf deinem iPhone.</p>
 </div>
-<div class="hero-art reveal" data-d="1"><span class="glow" aria-hidden="true"></span><img src="assets/hero-haus.webp" alt="" aria-hidden="true" width="620" height="620" data-par="1.1"></div>
 </div>
 </section>
 
@@ -82,6 +103,10 @@ setTimeout(pruefen,4000);})();</script>
 <div class="feature"><div class="reveal"><span class="eyebrow">Fragen</span><h2>Eine Frage,<br>eine Einordnung.</h2><p class="lead">Gerät defekt, Abnutzung beim Auszug, eine kleine Veränderung an der Wohnung. Du beschreibst die Situation, beantwortest zwei bis vier Rückfragen und bekommst eine Einordnung mit Quelle. Dazu einen sachlichen Entwurf für die Verwaltung, den du anpassen und kopieren kannst.</p><ul class="tiles reveal" data-d="2"><li class="tile"><img src="assets/geraet-defekt-kueche.webp" alt="" aria-hidden="true" width="360" height="225" loading="lazy"><span>Gerät defekt</span></li><li class="tile"><img src="assets/abnutzung-streichen.webp" alt="" aria-hidden="true" width="360" height="225" loading="lazy"><span>Abnutzung &amp; Auszug</span></li><li class="tile"><img src="assets/kleine-veraenderung-lampe.webp" alt="" aria-hidden="true" width="360" height="225" loading="lazy"><span>Kleine Veränderung</span></li></ul></div><div class="feature-art"><div class="device" data-par="1"><img src="assets/app-einordnung.webp" alt="Eine Einordnung in mietblick mit Quelle und Textentwurf" width="306" height="663" loading="lazy"></div></div></div>
 <div class="feature flip"><div class="reveal"><span class="eyebrow">Meine Wohnung</span><h2>Vom Einzug bis<br>zur Übergabe.</h2><p class="lead">Halte fest, in welchem Zustand du die Wohnung übernommen hast, mit Foto und Datum. Was später dazukommt, landet im selben Journal. Bei der Übergabe hast du alles beisammen, statt es aus der Erinnerung zu erzählen.</p></div><div class="feature-art"><div class="device" data-par="1.3"><img src="assets/app-wohnung.webp" alt="Das Wohnungs-Journal in mietblick mit Einträgen seit dem Einzug" width="306" height="663" loading="lazy"></div></div></div>
 </div>
+</section>
+
+<section class="band breath" aria-label="Zwischenruf">
+<div class="shell"><p class="reveal">Die meisten Fragen im Mietalltag sind klein. Schwer werden sie erst, wenn niemand sagt, was gilt.</p></div>
 </section>
 
 <section class="sec-tight">
@@ -161,33 +186,32 @@ setTimeout(pruefen,4000);})();</script>
 </section>
 
 </main>
-<nav class="dock" aria-label="Seiten" data-spy style="--i:0"><span class="pill" aria-hidden="true"></span><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Start</span></a><a href="index.html#funktionen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 17h5"/></svg><span>Feature</span></a><a href="index.html#preis"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 12.6 12.4 3.7a1 1 0 0 1 .7-.3H20a1 1 0 0 1 1 1v6.9a1 1 0 0 1-.3.7l-8.9 8.9a1.5 1.5 0 0 1-2.1 0l-6.9-6.9a1.5 1.5 0 0 1 0-2.1z"/><circle cx="16.5" cy="7.5" r="1.3"/></svg><span>Preis</span></a><a href="index.html#mehr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>Mehr</span></a></nav><script>(function(){
-var d=document.querySelector('.dock');if(!d)return;
-var ids=['start','funktionen','preis','mehr'];var links=[].slice.call(d.querySelectorAll('a'));var ticking=false;
-function set(i){d.style.setProperty('--i',i);links.forEach(function(a,k){if(k===i){a.setAttribute('aria-current','page');}else{a.removeAttribute('aria-current');}});}
-function spy(){ticking=false;var line=window.innerHeight*0.4,idx=0;
-var end=window.innerHeight+window.pageYOffset>=document.documentElement.scrollHeight-4;
-if(end){idx=ids.length-1;}else{ids.forEach(function(id,k){var el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<=line)idx=k;});}
-set(idx);}
-window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(spy);}},{passive:true});
-window.addEventListener('resize',spy);spy();})();</script>
-<footer id="mehr"><div class="shell f-in">
-<a class="brand" href="index.html" aria-label="mietblick">
-<img class="on-light" src="assets/wortmarke-petrol.png" alt="mietblick" width="900" height="240">
-<img class="on-dark" src="assets/wortmarke-weiss.png" alt="" aria-hidden="true" width="900" height="240">
-</a>
-<div>
-<nav aria-label="Seiten">
+<footer id="mehr"><div class="shell">
+<div class="foot-top">
+<p class="foot-claim">Dein Zuhause,<br>klar vor Augen.</p>
+<div class="foot-cols">
+<nav aria-label="Seiten"><h2 class="foot-h">Seiten</h2>
 <a href="index.html">Start</a>
+<a href="index.html#funktionen">Funktionen</a>
+<a href="index.html#preis">Preis</a>
 <a href="ratgeber/">Ratgeber</a>
+</nav>
+<nav aria-label="Rechtliches"><h2 class="foot-h">Rechtliches</h2>
 <a href="nutzungsbedingungen.html">Nutzungsbedingungen</a>
 <a href="datenschutz.html">Datenschutz</a>
 <a href="impressum.html">Impressum</a>
-<a href="support.html">Support</a>
 </nav>
-<p class="f-note">Ryse Solutions KLG &middot; <a href="mailto:support@mietblick-app.ch">support@mietblick-app.ch</a></p>
-<p class="f-note">mietblick ist eine Orientierungshilfe und keine juristische Auskunftsquelle. Die Inhalte ersetzen keine Rechtsberatung.</p>
-<p class="f-note">Diese Website lädt nichts von Dritten nach: keine Schriften, keine Statistik, keine Einbettungen. Darum braucht sie auch keine Cookies.</p>
+<div><h2 class="foot-h">Kontakt</h2>
+<a href="support.html">Support</a>
+<a href="mailto:support@mietblick-app.ch">support@mietblick-app.ch</a>
+<p>Ryse Solutions KLG</p>
+</div>
+</div>
+</div>
+<a class="brand foot-brand" href="index.html" aria-label="mietblick, zur Startseite"><img src="assets/wortmarke-weiss.png" alt="mietblick" width="900" height="240"></a>
+<div class="foot-legal">
+<p>mietblick ist eine Orientierungshilfe und keine juristische Auskunftsquelle. Die Inhalte ersetzen keine Rechtsberatung.</p>
+<p>Diese Website lädt nichts von Dritten nach: keine Schriften von fremden Servern, keine Statistik, keine Einbettungen. Darum braucht sie auch keine Cookies.</p>
 </div>
 </div></footer>
 <script>

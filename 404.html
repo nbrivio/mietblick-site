@@ -19,7 +19,35 @@ w.addEventListener('load',function(){setTimeout(pruefen,800);},false);
 setTimeout(pruefen,4000);})();</script>
 </head>
 <body>
-<header class="top"><div class="shell top-in"><a href="/" class="brand" aria-label="mietblick Startseite"><img src="assets/wortmarke-petrol.png" alt="mietblick" width="900" height="257"></a></div></header>
+<header class="top"><div class="top-in">
+<a class="brand" href="/index.html" aria-label="mietblick, zur Startseite">
+<img class="on-light" src="/assets/wortmarke-petrol.png" alt="mietblick" width="900" height="240">
+<img class="on-dark" src="/assets/wortmarke-weiss.png" alt="" aria-hidden="true" width="900" height="240">
+</a>
+<nav class="top-nav" aria-label="Hauptnavigation">
+<a href="/index.html#funktionen">Funktionen</a>
+<a href="/ratgeber/">Ratgeber</a>
+<a href="/index.html#preis">Preis</a>
+</nav>
+<div class="top-right">
+<a class="btn btn-primary btn-sm" href="/index.html#funktionen">Was sie kann</a>
+<button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen"><span></span></button>
+</div>
+<div class="menu" id="menu" hidden>
+<a href="/index.html#funktionen">Funktionen</a>
+<a href="/ratgeber/">Ratgeber</a>
+<a href="/index.html#preis">Preis</a>
+<a class="sub" href="/support.html">Support</a>
+<a class="sub" href="/nutzungsbedingungen.html">Nutzungsbedingungen</a>
+<a class="sub" href="/datenschutz.html">Datenschutz</a>
+<a class="sub" href="/impressum.html">Impressum</a>
+</div>
+</div></header>
+<script>(function(){var b=document.querySelector('.burger'),m=document.getElementById('menu');if(!b||!m)return;
+function setz(offen){b.setAttribute('aria-expanded',offen?'true':'false');b.setAttribute('aria-label',offen?'Menü schliessen':'Menü öffnen');if(offen){m.removeAttribute('hidden');}else{m.setAttribute('hidden','');}}
+b.addEventListener('click',function(){setz(b.getAttribute('aria-expanded')!=='true');});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){setz(false);b.focus();}});
+m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});})();</script>
 <main class="shell narrow" style="padding:clamp(72px,12vw,140px) 24px;text-align:left">
 <p class="eyebrow">Fehler 404</p>
 <h1>Diese Seite gibt es nicht.</h1>
