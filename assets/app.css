@@ -116,6 +116,25 @@ box-shadow:0 14px 30px -14px rgba(27,54,57,.6)}
 .hero .lead{max-width:40ch}
 .hero .note{font-size:15px;color:var(--ink-muted);margin:22px 0 0}
 
+.hero-grid{display:grid;gap:clamp(36px,5vw,64px);align-items:center}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:62% 50%;border-radius:var(--r-hero);box-shadow:var(--lift)}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}.hero h1{font-size:clamp(44px,5vw,70px);max-width:none}.hero-photo img{aspect-ratio:5/6}}
+@media(max-width:899px){.hero-photo img{aspect-ratio:3/2}}
+
+/* Vollbild-Foto als Atemraum zwischen zwei Abschnitten */
+.photo-band{line-height:0;overflow:hidden;background:var(--band)}
+.photo-band img{display:block;width:100%;height:auto;aspect-ratio:21/9;object-fit:cover}
+.photo-band-hub{max-width:1140px;margin:0 auto clamp(28px,4vw,44px);padding:0 24px;background:none}
+.photo-band-hub img{border-radius:var(--r-hero);aspect-ratio:21/9}
+@media(max-width:899px){.photo-band img{aspect-ratio:16/9}}
+/* Zugabe: das Bild loest sich beim Hereinscrollen aus der Unschaerfe. Ohne Unterstuetzung steht es einfach scharf da. */
+@supports (animation-timeline: view()){
+  @media (prefers-reduced-motion: no-preference){
+    .photo-band img{animation:schaerfen linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+    @keyframes schaerfen{from{filter:blur(14px);transform:scale(1.05)}to{filter:blur(0);transform:none}}
+  }
+}
+
 /* Atemraum: ein Satz, viel Flaeche */
 .breath{padding:clamp(112px,16vw,220px) 0}
 .breath p{font-size:clamp(28px,4.2vw,56px);line-height:1.08;letter-spacing:-.025em;font-weight:500;

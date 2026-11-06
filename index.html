@@ -33,6 +33,7 @@ function pruefen(){if(!w.__animBereit){h.classList.remove('js');}}
 w.addEventListener('load',function(){setTimeout(pruefen,800);},false);
 setTimeout(pruefen,4000);})();</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mietblick-app.ch/#organisation","name":"Ryse Solutions KLG","url":"https://mietblick-app.ch/","email":"support@mietblick-app.ch","address":{"@type":"PostalAddress","streetAddress":"Talackerstrasse 15","postalCode":"5037","addressLocality":"Muhen","addressCountry":"CH"},"identifier":{"@type":"PropertyValue","propertyID":"UID","value":"CHE-268.832.753"}},{"@type":"WebSite","@id":"https://mietblick-app.ch/#website","url":"https://mietblick-app.ch/","name":"mietblick","description":"Mietrecht verstehen, Fristen rechnen, Wohnung dokumentieren. Für Mieterinnen und Mieter in der Schweiz.","inLanguage":"de-CH","publisher":{"@id":"https://mietblick-app.ch/#organisation"}},{"@type":"WebPage","@id":"https://mietblick-app.ch/#seite","url":"https://mietblick-app.ch/","name":"mietblick, deine Wohnung","description":"mietblick liest deinen Mietvertrag, rechnet Fristen und erklärt in einem Satz, was gilt. Für Mieterinnen und Mieter in der Schweiz. Alles bleibt auf dem iPhone.","inLanguage":"de-CH","isPartOf":{"@id":"https://mietblick-app.ch/#website"}},{"@type":"SoftwareApplication","@id":"https://mietblick-app.ch/#app","name":"mietblick","applicationCategory":"UtilitiesApplication","operatingSystem":"iOS","description":"mietblick liest deinen Mietvertrag, rechnet Fristen und erklärt in einem Satz, was gilt. Für Mieterinnen und Mieter in der Schweiz. Alles bleibt auf dem iPhone.","inLanguage":"de-CH","publisher":{"@id":"https://mietblick-app.ch/#organisation"},"offers":{"@type":"Offer","name":"Jahresabo","price":"6.00","priceCurrency":"CHF"}}]}</script>
+<link rel="preload" as="image" href="assets/foto/vertrag-720.webp" imagesrcset="assets/foto/vertrag-720.webp 720w, assets/foto/vertrag-1200.webp 1200w, assets/foto/vertrag-1600.webp 1600w" imagesizes="(min-width:900px) 46vw, 100vw" fetchpriority="high">
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt</a>
@@ -69,7 +70,7 @@ m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});
 <main id="inhalt">
 
 <section class="hero" id="start">
-<div class="shell">
+<div class="shell hero-grid">
 <div class="reveal">
 <p class="status">Bald im App Store</p>
 <h1>Was steht eigentlich in deinem Mietvertrag?</h1>
@@ -77,6 +78,7 @@ m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});
 <div class="btns"><a class="btn btn-primary" href="#funktionen">Ansehen, was sie kann</a></div>
 <p class="note">Kein Konto, keine Cloud. Alles bleibt auf deinem iPhone.</p>
 </div>
+<div class="hero-photo reveal" data-d="1"><img src="assets/foto/vertrag-720.webp" srcset="assets/foto/vertrag-720.webp 720w, assets/foto/vertrag-1200.webp 1200w, assets/foto/vertrag-1600.webp 1600w" sizes="(min-width:900px) 46vw, 100vw" width="1600" height="850" alt="Ein Mietvertrag liegt im Morgenlicht auf einem Küchentisch, daneben eine Brille und eine Hand mit einer Tasse Kaffee" fetchpriority="high"></div>
 </div>
 </section>
 
@@ -105,6 +107,8 @@ m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});
 </div>
 </section>
 
+<div class="photo-band"><img src="assets/foto/schluessel-720.webp" srcset="assets/foto/schluessel-720.webp 720w, assets/foto/schluessel-1200.webp 1200w, assets/foto/schluessel-1600.webp 1600w" sizes="100vw" width="1600" height="685" alt="Eine Hand hält einen Wohnungsschlüssel mit Anhänger, dahinter ein leerer Flur mit Parkett und Nachmittagslicht" loading="lazy"></div>
+
 <section class="band breath" aria-label="Zwischenruf">
 <div class="shell"><p class="reveal">Die meisten Fragen im Mietalltag sind klein. Schwer werden sie erst, wenn niemand sagt, was gilt.</p></div>
 </section>
@@ -123,6 +127,8 @@ m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});
 </div>
 </div>
 </section>
+
+<div class="photo-band"><img src="assets/foto/parkett-720.webp" srcset="assets/foto/parkett-720.webp 720w, assets/foto/parkett-1200.webp 1200w, assets/foto/parkett-1600.webp 1600w" sizes="100vw" width="1600" height="685" alt="Jemand kniet auf Parkett und fotografiert einen kleinen Kratzer mit dem Telefon, daneben liegt ein Massband" loading="lazy"></div>
 
 <section class="sec" id="ratgeber">
 <div class="shell">
