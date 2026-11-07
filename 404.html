@@ -11,6 +11,8 @@
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/app.css">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-tight-latin.woff2" crossorigin>
 <script>/* Sicherheitsnetz: js schaltet die Animationen ein. Meldet sich das Hauptskript kurz
    nach dem Laden nicht, wird js wieder entfernt, damit kein Inhalt unsichtbar bleibt. */
 (function(){var d=document,w=window,h=d.documentElement;h.classList.add('js');
@@ -42,7 +44,7 @@ setTimeout(pruefen,4000);})();</script>
 <a class="sub" href="/impressum.html">Impressum</a>
 </div>
 </div></header>
-<script>(function(){var b=document.querySelector('.burger'),m=document.getElementById('menu');if(!b||!m)return;
+<script>(function(){window.__animBereit=1;var b=document.querySelector('.burger'),m=document.getElementById('menu');if(!b||!m)return;
 function setz(offen){b.setAttribute('aria-expanded',offen?'true':'false');b.setAttribute('aria-label',offen?'Menü schliessen':'Menü öffnen');if(offen){m.removeAttribute('hidden');}else{m.setAttribute('hidden','');}}
 b.addEventListener('click',function(){setz(b.getAttribute('aria-expanded')!=='true');});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){setz(false);b.focus();}});

@@ -19,6 +19,8 @@
 <link rel="icon" href="assets/icon.png">
 <link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="stylesheet" href="assets/app.css">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-tight-latin.woff2" crossorigin>
 <script>/* Sicherheitsnetz: js schaltet die Animationen ein. Meldet sich das Hauptskript kurz
    nach dem Laden nicht, wird js wieder entfernt, damit kein Inhalt unsichtbar bleibt. */
 (function(){var d=document,w=window,h=d.documentElement;h.classList.add('js');
@@ -102,6 +104,7 @@ m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});
   var bar=document.querySelector('.progress');
   var pars=[].slice.call(document.querySelectorAll('[data-par]'));
   var ticking=false;
+  window.__animBereit=1; /* Hauptskript laeuft: Sicherheitsnetz darf js nicht entfernen */
 
   function frame(){
     ticking=false;

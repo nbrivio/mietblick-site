@@ -19,6 +19,8 @@
 <link rel="icon" href="../assets/icon.png">
 <link rel="apple-touch-icon" href="../assets/icon.png">
 <link rel="stylesheet" href="../assets/app.css">
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/inter-tight-latin.woff2" crossorigin>
 <style>.rg-grid{display:grid;gap:16px;grid-template-columns:1fr;margin-top:10px}
 @media(min-width:720px){.rg-grid{grid-template-columns:1fr 1fr}}
 .rg-card{display:flex;flex-direction:column;text-decoration:none;color:inherit}
@@ -119,6 +121,7 @@ m.addEventListener('click',function(e){if(e.target.tagName==='A')setz(false);});
   var bar=document.querySelector('.progress');
   var pars=[].slice.call(document.querySelectorAll('[data-par]'));
   var ticking=false;
+  window.__animBereit=1; /* Hauptskript laeuft: Sicherheitsnetz darf js nicht entfernen */
 
   function frame(){
     ticking=false;
